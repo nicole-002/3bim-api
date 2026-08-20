@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Ago-2026 às 13:37
+-- Tempo de geração: 20-Ago-2026 às 14:02
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -20,8 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `loja`
 --
-CREATE DATABASE IF NOT EXISTS `loja` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `loja`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `livros`
+--
+
+CREATE TABLE `livros` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `autor` varchar(100) NOT NULL,
+  `ano_publicacao` int(11) NOT NULL,
+  `preco` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `livros`
+--
+
+INSERT INTO `livros` (`id`, `titulo`, `autor`, `ano_publicacao`, `preco`) VALUES
+(5, 'Todas as suas Imperfeições', 'Collen Hover', 2018, 26.9),
+(6, 'Minha Vida Fora de Série', 'Paula Pimenta', 2016, 36.9),
+(7, 'Fazendo meu Filme', 'Paula Pimenta', 2012, 25.9),
+(8, 'Jogos Vorazes', 'Paula Pimenta', 2007, 55.9),
+(9, 'Olhos D\'agua', 'Conceição Evaristo', 2018, 55);
 
 -- --------------------------------------------------------
 
@@ -49,6 +72,13 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `quantidade`) VALUES
 --
 
 --
+-- Índices para tabela `livros`
+--
+ALTER TABLE `livros`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ix_livros_id` (`id`);
+
+--
 -- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
@@ -58,6 +88,12 @@ ALTER TABLE `produtos`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `livros`
+--
+ALTER TABLE `livros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
