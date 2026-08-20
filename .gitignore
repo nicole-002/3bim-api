@@ -1,10 +1,13 @@
-# Ambientes Vituais
-venv/
+#ambientes virtuais
+
+ven/
 env/
 
-# Cache em Python
+#arquivs cache
+
 __pycache__/
 *.pyc
 
-# Arquivos de ambiente
-.env
+#arquivos de ambiente
+.evn
+
